@@ -38,10 +38,15 @@ body {
     border-style: solid;
     border-color: rgb(175, 3, 3);
     border-radius: 10px;
-    width: 15%;
+    width: 10%;
 
 }
 
+#startTime {
+    font-size: 20px;
+    font-family: 'Rubik Gemstones', cursive;
+    padding-left: 17%;
+}
 
 .dddd {
     font-family: 'Diplomata SC', cursive;
@@ -93,5 +98,5 @@ body {
 
 
 #namePeron2 {
-    margin-left: 37%;
+    margin-left: 54%;
 }
