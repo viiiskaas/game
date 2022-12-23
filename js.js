@@ -37,7 +37,10 @@ const closeModal = (val) => {
     modal.style.display = "none";
 }
 
-
+function selectFunction() {
+    var x = document.getElementById("mySelect").value;
+    console.log(x);
+}
 // function myFunction1(val) {
 //     person1.health = val;
 //     console.log(person1)
