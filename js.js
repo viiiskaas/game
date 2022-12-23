@@ -16,10 +16,48 @@
 
 
 const health1 = document.getElementById("lifePerson1");
-const health2 = document.getElementById("lifePerson2")
-const Person1 = document.getElementById("firstPerson")
-const Person2 = document.getElementById("secondPerson")
+const health2 = document.getElementById("lifePerson2");
+const Person1 = document.getElementById("firstPerson");
+const Person2 = document.getElementById("secondPerson");
+const creatPerson = document.getElementById("createPerson");
+const modal = document.getElementById("mood");
+const create = document.getElementById("create")
+const select = document.getElementById("mySelect")
+// const anPers = document.getElementByClass("punchAnimation");
 // console.log((health1).value);
+
+
+const showModal = () => {
+    modal.style.display = "contents";
+}
+
+const newPerson = {};
+const closeModal = (val) => {
+    person1.health = val
+    modal.style.display = "none";
+}
+
+
+// function myFunction1(val) {
+//     person1.health = val;
+//     console.log(person1)
+// }
+// function myFunction2(val) {
+//     person1.strength = val;
+//     console.log(person1)
+// }
+
+// function myFunction5(value) {
+//     if (select.value = "Persone1") {
+//         onsole.log(1);c
+//     }
+//     else if(select.value = "Persone1") {
+
+//     }
+//     else {
+//         console.log("Aaaaaa");
+//     }
+// }
 
 
 
@@ -85,6 +123,22 @@ const moveRight = (Person, position) => {
 
 }
 
+const protectionRight = (Person, position) => {
+    return Person.style.marginLeft = position;
+}
+
+const protectionLeft = (Person, position) => {
+    return Person.style.marginLeft = position;
+}
+
+
+function animation(person) {
+    return person.classList.add("punchAnimation")
+}
+function secondAnimation(person) {
+    return person.classList.add("punchAnimation2")
+}
+
 
 
 
@@ -99,6 +153,7 @@ function checkKey() {
 
 
         case (uniqKeys.has('KeyS') && uniqKeys.has('KeyJ')):
+            setTimeout(() => protectionLeft(Person2, '70%'), 1000, protectionRight(Person2, "80%"))
             console.log(protection(health2, person1, person2));
             console.log("Step forward");
 
@@ -112,13 +167,16 @@ function checkKey() {
             break;
 
         case (uniqKeys.has('KeyQ') && uniqKeys.has('KeyW') && uniqKeys.has('KeyE')):
-            setTimeout(() => moveLeft(Person1, '65%'), 1000, moveRight(Person1, "0%"))
+
+            setTimeout(() => moveLeft(Person1, '0%'), 1000, animation(Person1))
+
             console.log(superShock(health2, person1, person2));
             console.log("Step forward");
             break;
 
 
         case (uniqKeys.has('KeyK') && uniqKeys.has('KeyA')):
+            setTimeout(() => protectionLeft(Person1, '0%'), 1000, protectionRight(Person1, "-10%"))
             console.log(protection(health1, person2, person1));
             console.log("Step forward");
             break;
@@ -129,6 +187,8 @@ function checkKey() {
             break;
 
         case (uniqKeys.has('KeyU') && uniqKeys.has('KeyI') && uniqKeys.has('KeyO')):
+            secondAnimation(Person2)
+
             console.log(superShock(health1, person2, person1));
             console.log("Step forward");
             break;
